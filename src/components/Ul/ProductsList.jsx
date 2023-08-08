@@ -6,7 +6,7 @@ const ProductsList = ({data}) => {
     <>
     {
       data?.map((item, index) => (
-        <ProductCart item={item} />
+        <ProductCart item={item} key={index} />
       ))
     }
     </>
