@@ -1,3 +1,7 @@
+body {
+    overflow-x: hidden;
+}
+
 .hero__section {
     background: var(--hero-bg);
     padding: 50px 0;

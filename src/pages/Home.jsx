@@ -94,7 +94,7 @@ const Home = () => {
       <section className='time__count'>
         <Container>
           <Row className='pt-5'>
-            <Col lg='12' md='12' className='count__down-col'>
+            <Col lg='6' md='12' className='count__down-col'>
               <div className="clock__top-content pt-4">
                 <h4 className='text-white fs-6'>Limited offers</h4>
                 <h3 className='text-white fs-5 mt-3'>Quality  Armchair</h3>

@@ -4,6 +4,7 @@
 
 .product__img img {
     width: 260px;
+    margin: 0 auto;
 }
 
 .product__name a {
@@ -31,6 +32,11 @@
     background: var(--primary-color);
     color: #fff;
     border-radius: 50%;
+}
+
+.cart__link {
+    color: var(--primary-color);
+    text-decoration: none;
 }
 
 @media only screen and (max-width: 992px) {
