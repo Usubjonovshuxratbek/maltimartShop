@@ -170,4 +170,13 @@
     .mobile__menu span i {
         font-size: 1.6rem !important;
     }
+
+    .logo img {
+        width: 1.6rem;
+        height: 1.6rem;
+    }
+
+    .nav__wrapper {
+        padding: 20px 0;
+    }
 }
