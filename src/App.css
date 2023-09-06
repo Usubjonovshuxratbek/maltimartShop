@@ -25,6 +25,11 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+.container {
+  width: 1140px;
+  margin: 0 auto;
+}
+
 h1,
 h2,
 h3,

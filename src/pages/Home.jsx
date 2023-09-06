@@ -10,8 +10,11 @@ import ProductsList from '../components/Ul/ProductsList';
 import products from '../assets/data/products';
 import counterImg from '../assets/images/counter-timer-img.png'
 import Clock from '../components/Ul/Clock';
+import useGetData from '../customHoks/useGetData';
 
 const Home = () => {
+
+  const { data: products, loading } = useGetData('products')
 
   const [trendingProducts, setTrendingProducts] = useState([])
   const [bestSalesProducts, setBestSalesProducts] = useState([])
@@ -46,7 +49,7 @@ const Home = () => {
     setMobileProducts(filteredMobileProducts)
     setWirelessProducts(filteredWirelessProducts)
     setPopularProducts(filteredPopularProducts)
-  }, [])
+  }, [products])
   return (
     <Helment title={"Home"}>
       <section className='hero__section'>
@@ -76,7 +79,11 @@ const Home = () => {
             <Col lg='12' className='text-center'>
               <h2 className='section__title'>Trending Products</h2>
             </Col>
-            <ProductsList data={trendingProducts} />
+
+            {
+              loading ? <h5 className='fw-bold'>Loading.....</h5> :
+                <ProductsList data={trendingProducts} />
+            }
           </Row>
         </Container>
       </div>
@@ -86,7 +93,11 @@ const Home = () => {
             <Col lg='12' className='text-center'>
               <h2 className='section__title'>Best Sales</h2>
             </Col>
-            <ProductsList data={bestSalesProducts} />
+
+            {
+              loading ? <h5 className='fw-bold'>Loading.....</h5> :
+                <ProductsList data={bestSalesProducts} />
+            }
           </Row>
         </Container>
       </section>
@@ -121,8 +132,16 @@ const Home = () => {
             <Col lg='12' className='text-center mb-5'>
               <h2 className='section__title'>New Arrivals</h2>
             </Col>
-            <ProductsList data={mobileProducts} />
-            <ProductsList data={wirelessProducts} />
+
+            {
+              loading ? <h5 className='fw-bold'>Loading.....</h5> :
+                <ProductsList data={mobileProducts} />
+            }
+
+            {
+              loading ? <h5 className='fw-bold'>Loading.....</h5> :
+              <ProductsList data={wirelessProducts} />
+            }
           </Row>
         </Container>
       </section>
